@@ -19,7 +19,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto py-28 md:py-14">
+      <div className="relative z-10 max-w-4xl mx-auto pt-28 pb-8 md:py-14">
         {/* Top Badge */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
@@ -95,10 +95,7 @@ export default function Hero() {
           ].map((feature, index) => (
             <div
               key={index}
-              className="flex items-center gap-3 px-5 py-3 rounded-xl 
-      bg-[var(--cft-bg-surface)] border border-[var(--cft-border)] 
-      backdrop-blur-md hover:border-[var(--cft-primary)] 
-      transition duration-300"
+              className="flex items-center gap-3 px-5 py-3 rounded-xl bg-[var(--cft-bg-surface)] border border-[var(--cft-border)]backdrop-blur-md hover:border-[var(--cft-primary)] transition duration-300"
             >
               <span className="text-xl text-[var(--cft-primary)]">⚡</span>
 
@@ -107,6 +104,21 @@ export default function Hero() {
               </span>
             </div>
           ))}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
+        >
+          {/* Primary CTA */}
+          <Link
+            href="#leadform"
+            className="px-8 py-3 rounded-full bg-[var(--cft-primary)] hover:bg-[var(--cft-primary-hover)] text-white font-medium transition glow-blue"
+          >
+            Open Trading Account →
+          </Link>
         </motion.div>
       </div>
     </section>

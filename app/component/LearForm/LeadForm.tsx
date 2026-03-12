@@ -85,7 +85,7 @@ export default function LeadForm() {
   };
 
   return (
-    <section id="leadform" className="px-6 bg-[var(--cft-bg-dark)] py-12">
+    <section id="leadform" className="px-6 bg-[var(--cft-bg-dark)] py-2">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         {/* Left Image */}
         <motion.div

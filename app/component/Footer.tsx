@@ -11,7 +11,7 @@ export default function Footer() {
         {/* Brand */}
         <div>
           <h3 className="font-display text-2xl text-[var(--cft-text-main)] font-bold">
-            Close Friend Traders
+            Close Friends Traders
           </h3>
 
           <p className="mt-4 text-sm leading-relaxed max-w-sm">
@@ -20,7 +20,7 @@ export default function Footer() {
           </p>
 
           {/* Social Icons */}
-          <div className="flex gap-4 mt-6">
+          {/* <div className="flex gap-4 mt-6">
             <a
               href="#"
               className="p-2 rounded-full border border-[var(--cft-border)] hover:border-[var(--cft-primary)] hover:text-[var(--cft-primary)] transition"
@@ -48,11 +48,11 @@ export default function Footer() {
             >
               <Send size={18} />
             </a>
-          </div>
+          </div> */}
         </div>
 
         {/* Quick Links */}
-        <div>
+        {/* <div>
           <h4 className="text-[var(--cft-text-main)] font-semibold mb-4">
             Quick Links
           </h4>
@@ -91,10 +91,10 @@ export default function Footer() {
               </Link>
             </li>
           </ul>
-        </div>
+        </div> */}
 
         {/* Legal */}
-        <div>
+        {/* <div>
           <h4 className="text-[var(--cft-text-main)] font-semibold mb-4">
             Legal
           </h4>
@@ -133,7 +133,7 @@ export default function Footer() {
               </Link>
             </li>
           </ul>
-        </div>
+        </div> */}
       </div>
 
       {/* Bottom Bar */}
