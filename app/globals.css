@@ -1,26 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap");
+
 @import "tailwindcss";
 
+/* ─────────────────────────────────────────
+   Trade Pro — Brand Token System
+   Typography: Syne (display) + DM Sans (body)
+───────────────────────────────────────── */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* ── Core Brand Palette ── */
+  --cft-primary: #3b82f6; /* Blue-500  — CTAs, highlights */
+  --cft-primary-hover: #2563eb; /* Blue-600  — hover state */
+  --cft-primary-glow: #3b82f633; /* Blue-500 @ 20% — glow rings */
+
+  --cft-secondary: #1e3a8a; /* Blue-900  — deep accent fills */
+  --cft-accent: #60a5fa; /* Blue-400  — text gradients, icons */
+  --cft-accent-light: #93c5fd; /* Blue-300  — soft highlights */
+
+  /* ── Backgrounds ── */
+  --cft-bg-dark: #020617; /* Slate-950 — page base */
+  --cft-bg-card: #0b1120; /* Mid-dark  — card surfaces */
+  --cft-bg-surface: #0f172a; /* Slate-900 — elevated surfaces */
+  --cft-bg-overlay: #1e293b66; /* Slate-800 @ 40% — modal backdrops */
+
+  /* ── Mesh / Glow layers (used in hero) ── */
+  --cft-glow-blue: radial-gradient(
+    ellipse 70% 50% at 50% 0%,
+    #1d4ed826 0%,
+    transparent 70%
+  );
+  --cft-glow-center: radial-gradient(
+    ellipse 40% 60% at 50% 40%,
+    #3b82f614 0%,
+    transparent 65%
+  );
+
+  /* ── Text ── */
+  --cft-text-main: #f8fafc; /* Slate-50  */
+  --cft-text-muted: #94a3b8; /* Slate-400 */
+  --cft-text-subtle: #475569; /* Slate-600 */
+
+  /* ── Borders ── */
+  --cft-border: #1e293b; /* Slate-800 */
+  --cft-border-bright: #334155; /* Slate-700 — focused / hover */
+
+  /* ── Typography Scale ── */
+  --font-display: "Syne", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+
+  /* ── Radius ── */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* ── Transitions ── */
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 180ms;
+  --duration-base: 320ms;
+  --duration-slow: 600ms;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ─────────────────────────────
+   Premium Carousel Dots
+───────────────────────────── */
+
+.cft-carousel .slick-dots {
+  bottom: -45px;
+  display: flex !important;
+  justify-content: center;
+  gap: 10px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* hide default dot */
+.cft-carousel .slick-dots li button:before {
+  display: none;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* base dot */
+.cft-carousel .slick-dots li {
+  width: 28px;
+  height: 6px;
+}
+
+.cft-carousel .slick-dots li button {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+.cft-carousel .slick-dots li button::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: #ffffff40;
+  transition: all 0.4s ease;
+}
+
+/* active dot */
+
+.cft-carousel .slick-dots li.slick-active button::after {
+  background: var(--cft-primary);
+  width: 36px;
 }
